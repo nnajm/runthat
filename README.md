@@ -1,4 +1,4 @@
 runthat
 =======
 
-R GUI application for to make testhat more handy.
+R web package to make testhat more handy. It runs testthat tests.
