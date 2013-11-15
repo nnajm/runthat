@@ -1,0 +1,5 @@
+import(shiny)
+import(testthat)
+export(test_launcher)
+export(HtmlReporter)
+exportClasses(HtmlReporter)
