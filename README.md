@@ -1,4 +1,4 @@
 runthat
 =======
 
-R web package to make testhat more handy. It runs testthat tests.
+Test runner frontend package using shiny for R "testthat" tests.
