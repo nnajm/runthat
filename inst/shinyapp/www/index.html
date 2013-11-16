@@ -1,15 +1,125 @@
 <html>
-<head>
-  <script src="shared/jquery.js" type="text/javascript"></script>
-  <script src="shared/shiny.js" type="text/javascript"></script>
-  <link rel="stylesheet" type="text/css" href="shared/shiny.css"/> 
-</head>
- 
-<body>
-  <h1>Tests Results</h1>
-    <input id='dirPath' type="text"/>
-  	<input id="runButton" type="button" value="Run" class="btn action-button shiny-bound-input"/>
-  <div id="table" class="shiny-html-output"></div>
-</body>
+  <head>
+    <script type="text/javascript" src="shared/jquery.js"></script>
+    <script src="shared/shiny.js" type="text/javascript"></script>    
+    <link href="shared/shiny.css" type="text/css" rel="stylesheet" />
+    <title>runthat!; run your tests with style!</title>
+    <style>
+      * { font-size: 10px; }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .header {
+        background-color: #88BBCC;
+        color: #fff;
+        font-size: 57px;
+        font-weight: bold;
+        height: 71px;
+        line-height: 71px;
+        padding: 0px 7px;
+        height: 71px;
+      }
+      .test-form {
+        background-color: #def;
+        color: #000;
+        font-size: 13px;
+        padding: 0px 7px;
+        height: 41px;
+        line-height: 41px;
+      }
+      .test-form input {
+        border: 1px solid #88BBCC;
+      }
 
+      div.runthat-results {
+        padding: 17px 3%;
+        width: 94%;
+      }
+      
+      div.runthat-results table {
+      	border: none;
+      	width: 100%;
+      }
+      
+      div.runthat-results div.runthat-context-name {
+				border-bottom: 1px solid;
+				font-weight: bold;
+				padding: 3px 0;
+				width: 100%;
+      }      
+     
+      div.runthat-results ul {
+        list-style-type: none;
+      }
+      
+      div.runthat-results ul li {
+        margin-top: 7px;
+      }
+      
+			div.runthat-results ul li.runthat-test-name {
+        font-weight: bold;
+      }
+
+      div.runthat-results table.runthat-context-results {
+        border: none;
+        width: 99%;
+        margin-left: 1%;
+      }
+      
+      div.runthat-results table.runthat-context-results th {
+        border: none;
+        text-align: left;
+      }
+      
+      div.runthat-results table.runthat-context-results td {
+      	border-bottom: 1px solid #CCDDDD;
+      }
+
+      div.runthat-results table td.runthat-checkbox {
+      	width: 17px;
+      }
+      
+      div.runthat-results table td.runthat-result-NOK {
+      	width: 37px;
+      	font-size: 13px;
+      	font-weight:bold;
+        background-color: #fff;
+        color: #f00;        
+        text-align: center;
+      }
+      div.runthat-results table td.runthat-result-OK {
+      	width: 37px;
+      	font-size: 13px;
+      	font-weight:bold;
+        background-color: #fff;
+        color: #080;        
+        text-align: center;
+      }
+      
+      div.runthat-results table td.runthat-result-message-OK {
+      	color: #ccc;
+      	font-style:italic;
+      }
+      
+      div.runthat-results table td.runthat-result-time {
+      	width: 37px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="header">
+       runthat
+    </div>
+    <div class="test-form">
+      <form>
+        <label for="dirPath">Test file path:</label>
+        <input id="dirPath" name="dirPath" class="shiny-bound-input" size="63" type="text" /> 
+        <input id="runButton" class="btn action-button shiny-bound-input" type="button" value="Run" />
+      </form>
+    </div>
+    <div id="table" class="shiny-html-output runthat-results"></div>    
+  </body>
 </html>
