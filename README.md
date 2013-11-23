@@ -1,4 +1,4 @@
 runthat
 =======
 
-Test runner frontend R package using shiny for "testthat".
+R test runner package using shiny for "testthat".
